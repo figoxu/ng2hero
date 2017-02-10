@@ -6,14 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
-  hero:Hero = {
-    id:1,
-    name:'windstorm'
-  }
-  heros = HEROS
+    title = 'app works!';
+    hero:Hero = {
+        id:1,
+        name:'windstorm'
+    };
+    heros = HEROS;
+    selectedHero:Hero;
 
-
+    onSelect(hero:Hero): void {
+        this.selectedHero = hero;
+    }
 
 }
 
@@ -35,4 +38,4 @@ const HEROS: Hero[] = [
     { id: 18, name: 'Dr IQ' },
     { id: 19, name: 'Magma' },
     { id: 20, name: 'Tornado' }
-]
+];
