@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { DetailComponent } from './detail/detail.component';
 import { ListComponent } from './list/list.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import {HeroService} from "./hero.service";
 
 @NgModule({
   declarations: [
@@ -23,19 +24,22 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     RouterModule.forRoot([
       {
         path:'heroes',
-        component:ListComponent,
+        component:ListComponent
       },
       {
         path:'dashboard',
-        component:DashboardComponent,
+        component:DashboardComponent
       },{
         path:'',
         redirectTo:'/dashboard',
         pathMatch:'full'
+      },{
+        path:'detail/:id',
+        component:DetailComponent
       }
     ])
   ],
-  providers: [],
+  providers: [ HeroService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
