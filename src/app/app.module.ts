@@ -7,12 +7,14 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { DetailComponent } from './detail/detail.component';
 import { ListComponent } from './list/list.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DetailComponent,
-    ListComponent
+    ListComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -22,6 +24,14 @@ import { ListComponent } from './list/list.component';
       {
         path:'heroes',
         component:ListComponent,
+      },
+      {
+        path:'dashboard',
+        component:DashboardComponent,
+      },{
+        path:'',
+        redirectTo:'/dashboard',
+        pathMatch:'full'
       }
     ])
   ],
